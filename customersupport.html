@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWOOFLE - Mietmöbel Hilfebereich | Customersupport und FAQ</title>
+    <meta name="description" content="SWOOFLE Hilfebereich: Customersupport, Servicebereich, Informationen, Versand, Zahlung, How-to.">
+    <meta name="keywords" content="Eventmöbel, FlatCube, Mietmöbel, nachhaltig, Berlin, Möbelverleih">
+    <meta name="author" content="SWOOFLE GmbH Georg Winkel">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.swoofle.de">
+    <meta name="theme-color" content="#fc3523">
+    
+    <!-- OpenGraph -->
+    <meta property="og:title" content="SWOOFLE - Nachhaltige Eventmöbel für einzigartige Veranstaltungen">
+    <meta property="og:description" content="Entdecken Sie unsere nachhaltigen FlatCubes und Eventmöbel. Flexibel, platzsparend und sofort europaweit lieferbar.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.swoofle.de">
+    <meta property="og:locale" content="de_DE">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SWOOFLE - Nachhaltige Eventmöbel">
+    <meta name="twitter:description" content="Nachhaltige Designmöbel für Events, Messen und Workshops. Flexibel mieten oder kaufen.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS - WICHTIG: Reihenfolge ist entscheidend! -->
+    <!-- 1. Gemeinsame Basis für beide Seiten -->
+    <link rel="stylesheet" href="css/shared-base.css"/>
+    <!-- 2. Help Center spezifische Styles -->
+    <link rel="stylesheet" href="css/customersupport.css"/>
+
+    <!-- Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "sfxag7z5wk");
+    </script>
+</head>
+
+<body>
+    <!-- Header - Wiederverwendung der gleichen Struktur wie index.html -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                 <div class="logo">
+    <img src="img/croppedlogoswoofle.png" alt="Swoofle Logo" class="logo-light">
+    <img src="img/logodarkmode.png" alt="Swoofle Logo" class="logo-dark">
+</div>
+                <nav class="nav-menu" id="navMenu">
+                    <a href="index.html" data-action="close-menu">Startseite</a>
+                    <a href="index.html#products" data-action="close-menu">Produkte</a>
+                    <a href="index.html#booking-tool" data-action="close-menu">InstantBooking</a>
+                    <a href="customersupport.html" data-action="close-menu">Support</a>
+                    <a href="kontakt.html" data-action="close-menu">Kontakt</a>
+                </nav>
+                
+
+                <div class="header-controls">
+                    <button class="theme-toggle" data-action="toggle-theme" aria-label="Theme wechseln">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <button class="hamburger" data-action="toggle-menu" aria-label="Menü">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="help-container">
+            
+            <!-- Welcome Section - Optimiert für Lesbarkeit -->
+            <section class="welcome-section">
+                <div class="welcome-content">
+                    <h1 class="welcome-title">Willkommen im Hilfezentrum</h1>
+                    <p class="welcome-subtitle">Wie können wir dir  weiterhelfen?</p>
+                </div>
+            </section>
+
+            <!-- Search Section - Verbesserte UX -->
+            <section class="search-section">
+                <div class="search-container">
+                    <div class="search-box">
+                        <svg class="search-icon" viewBox="0 0 256 256" fill="currentColor">
+                            <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                        </svg>
+                        <input type="text" placeholder="Suche nach Hilfe" class="search-input" id="helpSearch" autocomplete="off">
+                        <div class="search-suggestions" id="searchSuggestions"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section - Verbesserte Lesbarkeit -->
+            <section class="faq-section">
+                <h2 class="section-title">Häufig gestellte Fragen</h2>
+                <div class="faq-container">
+                    
+                    <!-- FAQ Item 1 -->
+                    <details class="faq-item" data-faq="rental">
+                        <summary class="faq-question">
+                            <span class="faq-question-text">Wie miete ich Eventmöbel?</span>
+                            <svg class="faq-toggle-icon" viewBox="0 0 256 256" fill="currentColor">
+                                <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                            </svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Um Eventmöbel zu mieten, durchstöbern Sie unsere Auswahl online, wählen Sie die gewünschten Artikel und Mengen aus, fügen Sie sie Ihrem Warenkorb hinzu und folgen Sie dem Bestellvorgang. Sie können auch unser Kundenservice-Team kontaktieren, um persönliche Unterstützung zu erhalten.</p>
+                        </div>
+                    </details>
+                    
+                    <!-- FAQ Item 2 -->
+                    <details class="faq-item" data-faq="delivery">
+                        <summary class="faq-question">
+                            <span class="faq-question-text">Was sind die Lieferbedingungen?</span>
+                            <svg class="faq-toggle-icon" viewBox="0 0 256 256" fill="currentColor">
+                                <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                            </svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Wir bieten verschiedene Lieferoptionen: Standardversand (1-3 Werktage), Expressversand (24h) und Same-Day-Delivery in ausgewählten Städten. Die Lieferung erfolgt bis zur Bordsteinkante. Aufbau-Service ist gegen Aufpreis verfügbar.</p>
+                        </div>
+                    </details>
+                    
+                    <!-- FAQ Item 3 -->
+                    <details class="faq-item" data-faq="modification">
+                        <summary class="faq-question">
+                            <span class="faq-question-text">Wie kann ich meine Bestellung ändern oder stornieren?</span>
+                            <svg class="faq-toggle-icon" viewBox="0 0 256 256" fill="currentColor">
+                                <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                            </svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Bestellungen können bis 24 Stunden vor dem Liefertermin kostenfrei geändert oder storniert werden. Kontaktieren Sie dazu unseren Kundenservice oder nutzen Sie Ihr Online-Kundenkonto. Bei kurzfristigeren Änderungen können Gebühren anfallen.</p>
+                        </div>
+                    </details>
+
+                    <!-- FAQ Item 4 -->
+                    <details class="faq-item" data-faq="payment">
+                        <summary class="faq-question">
+                            <span class="faq-question-text">Welche Zahlungsmethoden werden akzeptiert?</span>
+                            <svg class="faq-toggle-icon" viewBox="0 0 256 256" fill="currentColor">
+                                <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                            </svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Wir akzeptieren alle gängigen Zahlungsmethoden: Kreditkarte (Visa, Mastercard), PayPal, SEPA-Lastschrift, Sofortüberweisung und Rechnung (für Geschäftskunden). Alle Zahlungen werden sicher verschlüsselt übertragen.</p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <!-- Popular Topics Section - Verbesserte Icons -->
+            <section class="topics-section">
+                <h2 class="section-title">Beliebte Themen</h2>
+                <div class="topics-grid">
+                    
+                    <div class="topic-card" data-topic="payments" tabindex="0">
+                        <div class="topic-icon">
+                            <svg viewBox="0 0 256 256" fill="currentColor">
+                                <path d="M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48Zm0,16V88H32V64Zm0,128H32V104H224v88Zm-16-24a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h32A8,8,0,0,1,208,168Zm-64,0a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h16A8,8,0,0,1,144,168Z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="topic-title">Zahlungen</h3>
+                    </div>
+                    
+                    <div class="topic-card" data-topic="orders" tabindex="0">
+                        <div class="topic-icon">
+                            <svg viewBox="0 0 256 256" fill="currentColor">
+                                <path d="M216,64H176a48,48,0,0,0-96,0H40A16,16,0,0,0,24,80V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V80A16,16,0,0,0,216,64ZM128,32a32,32,0,0,1,32,32H96A32,32,0,0,1,128,32Zm88,184H40V80H80V96a8,8,0,0,0,16,0V80h64V96a8,8,0,0,0,16,0V80h40Z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="topic-title">Mieten & Kaufen</h3>
+                    </div>
+                    
+                    <div class="topic-card" data-topic="shipping" tabindex="0">
+                        <div class="topic-icon">
+                            <svg viewBox="0 0 256 256" fill="currentColor">
+                                <path d="M247.42,117l-14-35A15.93,15.93,0,0,0,218.58,72H184V64a8,8,0,0,0-8-8H24A16,16,0,0,0,8,72V184a16,16,0,0,0,16,16H41a32,32,0,0,0,62,0h50a32,32,0,0,0,62,0h17a16,16,0,0,0,16-16V120A7.94,7.94,0,0,0,247.42,117ZM72,208a16,16,0,1,1,16-16A16,16,0,0,1,72,208Zm112,0a16,16,0,1,1,16-16A16,16,0,0,1,184,208Zm48-24H215a32,32,0,0,0-62,0H103a32,32,0,0,0-62,0H24V72H168v64h50.58l13.42,33.5Z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="topic-title">Versand</h3>
+                    </div>
+                    
+                    <div class="topic-card" data-topic="Nachhaltigkeit" tabindex="0">
+                        <div class="topic-icon">
+                            <svg viewBox="0 0 256 256" fill="currentColor">
+                                <path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="topic-title">Nachhaltigkeit</h3>
+                    </div>
+                    <div class="topic-card" data-topic="Produktinformation" tabindex="0">
+                        <div class="topic-icon">
+                            <svg viewBox="0 0 256 256" fill="currentColor">
+                                <path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="topic-title">Produktinformation</h3>
+                    </div>
+                </div>
+                
+            </section>
+
+            <!-- Featured Articles Section - Mit Placeholder-Bildern -->
+            <section class="articles-section">
+                <h2 class="section-title">Ausgewählte Artikel</h2>
+                <div class="articles-grid">
+                    
+                    <article class="article-card" data-article="return">
+                        <div class="article-image">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjZjNlOWU3Ii8+CjxyZWN0IHg9IjUwIiB5PSI1MCIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMDAiIHJ4PSIxMCIgZmlsbD0iIzllNWQ0ZiIgZmlsbC1vcGFjaXR5PSIwLjIiLz4KPHN2ZyB4PSIxMjAiIHk9Ijg1IiB3aWR0aD0iNjAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiBmaWxsPSIjOWU1ZDRmIj4KPHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiBmaWxsPSIjOWU1ZDRmIj4KPHBhdGggZD0iTTIxNiw0MEgxMTJBMTYsMTYsMCwwLDAsOTYsNTZWNzJIODBhOCw4LDAsMCwwLDAsOGgxNlY5NmE4LDgsMCwwLDAsMTYsMFY5NmgyNHY5NmE4LDgsMCwwLDAsMTYsMFY5NmgyNGE4LDgsMCwwLDAsMC0xNkgxMTJWNTZIMjE2VjE5MkgxNzZhOCw4LDAsMCwwLDAsMTZoNDBhMTYsMTYsMCwwLDAsMTYtMTZWNTZBMTYsMTYsMCwwLDAsMjE2LDQwWiIvPgo8L3N2Zz4KPC9zdmc+CjwvZz4KPC9zdmc+" alt="Artikel Rückgabe" class="article-placeholder-img">
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">Wie man einen Artikel zurückgibt</h3>
+                            <p class="article-description">Erfahren Sie, wie Sie einen online oder im Geschäft gekauften Artikel zurückgeben können.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="article-card" data-article="cancel">
+                        <div class="article-image">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjZjNlOWU3Ii8+CjxyZWN0IHg9IjUwIiB5PSI1MCIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMDAiIHJ4PSIxMCIgZmlsbD0iIzllNWQ0ZiIgZmlsbC1vcGFjaXR5PSIwLjIiLz4KPHN2ZyB4PSIxMjAiIHk9Ijg1IiB3aWR0aD0iNjAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiBmaWxsPSIjOWU1ZDRmIj4KPHBhdGggZD0iTTIxNiw0MEgxNzZhNDgsNDgsMCwwLDAtOTYsMEg0MEExNiwxNiwwLDAsMCwyNCw1NlYyMDBhMTYsMTYsMCwwLDAsMTYsMTZIMjE2YTE2LDE2LDAsMCwwLDE2LTE2VjU2QTE2LDE2LDAsMCwwLDIxNiw0MFpNMTI4LDMyYTMyLDMyLDAsMCwxLDMyLDMySDk2QTMyLDMyLDAsMCwxLDEyOCwzMlptODgsMTg0SDQwVjU2SDgwVjk2YTgsOCwwLDAsMCwxNiwwVjU2aDY0Vjk2YTgsOCwwLDAsMCwxNiwwVjU2aDQwWiIvPgo8L3N2Zz4KPC9zdmc+" alt="Bestellung stornieren" class="article-placeholder-img">
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">Wie man eine Bestellung storniert</h3>
+                            <p class="article-description">Wie du eine online aufgegebene Bestellung stornieren kannst.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="article-card" data-article="track">
+                        <div class="article-image">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjZjNlOWU3Ii8+CjxyZWN0IHg9IjUwIiB5PSI1MCIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMDAiIHJ4PSIxMCIgZmlsbD0iIzllNWQ0ZiIgZmlsbC1vcGFjaXR5PSIwLjIiLz4KPHN2ZyB4PSIxMjAiIHk9Ijg1IiB3aWR0aD0iNjAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiBmaWxsPSIjOWU1ZDRmIj4KPHBhdGggZD0iTTI0Ny40MiwxMTdsLTE0LTM1QTE1LjkzLDE1LjkzLDAsMCwwLDIxOC41OCw3MkgxODRWNjRhOCw4LDAsMCwwLTgtOEgyNEExNiwxNiwwLDAsMCw4LDcyVjE4NGExNiwxNiwwLDAsMCwxNiwxNkg0MWEzMiwzMiwwLDAsMCw2MiwwaDUwYTMyLDMyLDAsMCwwLDYyLDBoMTdhMTYsMTYsMCwwLDAsMTYtMTZWMTIwQTcuOTQsNy45NCwwLDAsMCwyNDcuNDIsMTE3Wk03MiwyMDhhMTYsMTYsMCwxLDEsMTYtMTZBMTYsMTYsMCwwLDEsNzIsMjA4Wm0xMTIsMGExNiwxNiwwLDEsMSwxNi0xNkExNiwxNiwwLDAsMSwxODQsMjA4Wm00OC0yNEgyMTVhMzIsMzIsMCwwLDAtNjIsMEgxMDNhMzIsMzIsMCwwLDAtNjIsMEgyNFY3MkgxNjh2NjRoNTAuNThsMTMuNDIsMzMuNVoiLz4KPC9zdmc+Cjwvc3ZnPgo=" alt="Bestellung verfolgen" class="article-placeholder-img">
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">Wie man eine Bestellung verfolgt</h3>
+                            <p class="article-description">Erfahren Sie, wie Sie eine online aufgegebene Bestellung verfolgen können.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Video Section - Verbesserte UX -->
+            <section class="videos-section">
+                <h2 class="section-title">How-to-Videos</h2>
+                <div class="videos-grid">
+                    
+                    <div class="video-card" data-video="select">
+                        <div class="video-thumbnail">
+                            <div class="video-placeholder">
+                                <div class="play-button">
+                                    <svg viewBox="0 0 256 256" fill="currentColor">
+                                        <path d="m232.4,114.49-160-88A8,8,0,0,0,60,32V224a8,8,0,0,0,12.4,6.51l160-88a8,8,0,0,0,0-13ZM76,208V48L212,128Z"></path>
+                                    </svg>
+                                </div>
+                                <div class="video-duration">3:24</div>
+                            </div>
+                        </div>
+                        <div class="video-content">
+                            <h3 class="video-title">Wie man Eventmöbel auswählt</h3>
+                            <p class="video-description">Ein kurzes Video, das Ihnen zeigt, wie Sie die perfekten Möbel für Ihre Veranstaltung auswählen.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card" data-video="order">
+                        <div class="video-thumbnail">
+                            <div class="video-placeholder">
+                                <div class="play-button">
+                                    <svg viewBox="0 0 256 256" fill="currentColor">
+                                        <path d="m232.4,114.49-160-88A8,8,0,0,0,60,32V224a8,8,0,0,0,12.4,6.51l160-88a8,8,0,0,0,0-13ZM76,208V48L212,128Z"></path>
+                                    </svg>
+                                </div>
+                                <div class="video-duration">2:15</div>
+                            </div>
+                        </div>
+                        <div class="video-content">
+                            <h3 class="video-title">Wie man eine Bestellung aufgibt</h3>
+                            <p class="video-description">Eine Schritt-für-Schritt-Anleitung, wie Sie Ihre Bestellung online aufgeben können.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section - Mit Callback-Funktion statt Live Chat -->
+            <section class="contact-section">
+                <div class="contact-content">
+                    <h2 class="contact-title">Du benötigst immer noch Hilfe?</h2>
+                    <p class="contact-description">Unser Support-Team steht dir gerne zur Verfügung</p>
+                    <button class="contact-button" onclick="openContactModal()">
+                        <span>Kontaktiere uns</span>
+                        <svg viewBox="0 0 256 256" fill="currentColor">
+                            <path d="M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48Zm0,128H32V96H224ZM224,80H32V64H224Z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Search Results Modal -->
+        <div class="search-modal" id="searchModal">
+            <div class="search-modal-content">
+                <div class="search-modal-header">
+                    <h3>Suchergebnisse</h3>
+                    <button class="close-modal" onclick="closeSearchModal()" aria-label="Schließen">×</button>
+                </div>
+                <div class="search-results" id="searchResults">
+                    <!-- Results will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Modal - Mit Callback-Option -->
+        <div class="contact-modal" id="contactModal">
+            <div class="contact-modal-content">
+                <div class="contact-modal-header">
+                    <h3>Kontaktieren Sie uns</h3>
+                    <button class="close-modal" onclick="closeContactModal()" aria-label="Schließen">×</button>
+                </div>
+                <div class="contact-options">
+                    
+                    <div class="contact-option" data-contact="email">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 256 256" fill="currentColor">
+                                <path d="M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48Zm0,16V96L143.47,144a8,8,0,0,1-6.94,0L32,96V64Zm0,128H32V112l81.77,48a24,24,0,0,0,20.46,0L224,112Z"></path>
+                            </svg>
+                        </div>
+                        <h4>E-Mail Support</h4>
+                        <p>support@swoofle.de</p>
+                        <span class="response-time">Antwort in 24h</span>
+                    </div>
+                    
+                    <div class="contact-option" data-contact="phone">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 256 256" fill="currentColor">
+                                <path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"></path>
+                            </svg>
+                        </div>
+                        <h4>Telefon Support</h4>
+                        <p>+49 (0) 30 123456789</p>
+                        <span class="response-time">Mo-Fr 9-18 Uhr</span>
+                    </div>
+                    
+                    <!-- Callback-Option statt Live Chat -->
+                    <div class="contact-option" data-contact="callback">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 256 256" fill="currentColor">
+                                <path d="M136.54,96.75a56,56,0,1,0-81.08,0,95.93,95.93,0,0,0-52.34,77.07A8,8,0,0,0,11.25,184H80a8,8,0,0,0,0-16H26.73a80,80,0,0,1,134.54,0H208a8,8,0,0,0,0,16h68.75a8,8,0,0,0,8.13-10.93A95.93,95.93,0,0,0,232.54,96.75ZM96,96A40,40,0,1,1,136,56,40,40,0,0,1,96,96Zm141.17,16a8,8,0,0,0-11.32,1.17l-20,24a8,8,0,0,0,12.32,10.26L232,130.34l13.83,17.09a8,8,0,1,0,12.32-10.26l-20-24A8,8,0,0,0,237.17,112Z"></path>
+                            </svg>
+                        </div>
+                        <h4>Rückruf Service</h4>
+                        <p>Wir rufen Sie zurück</p>
+                        <span class="response-time">Innerhalb von 2h</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Callback Request Modal -->
+        <div class="callback-modal" id="callbackModal">
+            <div class="callback-modal-content">
+                <div class="callback-modal-header">
+                    <h3>Rückruf anfordern</h3>
+                    <button class="close-modal" onclick="closeCallbackModal()" aria-label="Schließen">×</button>
+                </div>
+                <div class="callback-form">
+                    <div class="form-group">
+                        <label for="callbackName">Name *</label>
+                        <input type="text" id="callbackName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="callbackPhone">Telefonnummer *</label>
+                        <input type="tel" id="callbackPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="callbackTime">Bevorzugte Uhrzeit</label>
+                        <select id="callbackTime">
+                            <option value="sofort">Sofort</option>
+                            <option value="vormittag">Vormittag (9-12 Uhr)</option>
+                            <option value="nachmittag">Nachmittag (13-17 Uhr)</option>
+                            <option value="abend">Abend (18-20 Uhr)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="callbackMessage">Ihr Anliegen (optional)</label>
+                        <textarea id="callbackMessage" rows="3" placeholder="Kurze Beschreibung Ihres Anliegens..."></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="closeCallbackModal()">Abbrechen</button>
+                        <button type="button" class="btn-primary" onclick="submitCallbackRequest()">Rückruf anfordern</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer bleibt unverändert -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SWOOFLE</h4>
+                    <a href="#about">Über uns</a>
+                    <a href="#">Karriere</a>
+                    <a href="#">Presse</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Service</h4>
+                    <a href="kontakt.html">Kontakt</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="customersupport.html">Support</a>
+                    <a href="#">2ndChance Shop</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="#">Impressum</a>
+                    <a href="#">Datenschutz</a>
+                    <a href="#">AGB</a>
+                    <a href="#">Cookie-Einstellungen</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Folgen Sie uns</h4>
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">YouTube</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SWOOFLE GmbH. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript - WICHTIG: Richtiger cs.js mit erweiterten Funktionen -->
+    <script src="js/cs.js"></script>
+</body>
+</html>

@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWOOFLE Booking - Eventmöbel online buchen | Schritt-für-Schritt Buchungssystem</title>
+    <meta name="description" content="Buche deine SWOOFLE Eventmöbel direkt online in nur 2-3 Schritten. FlatCubes, Flatdesks und Zubehör für dein Event mit InstantBooking.">
+    <meta name="keywords" content="SWOOFLE Booking,Swoofle Rent, Eventmöbel mieten, FlatCube buchen, Online-Buchung, InstantBooking">
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- Schema.org für Booking-Seite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "SWOOFLE InstantBooking",
+      "provider": {
+        "@type": "Organization",
+        "name": "SWOOFLE GmbH",
+        "url": "https://www.swoofle.de"
+      },
+      "description": "Online-Buchungssystem für nachhaltige Eventmöbel mit 2-3 Schritten",
+      "areaServed": "Europe",
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://www.swoofle.de/booking.html",
+        "serviceType": "Online Booking",
+        "processingTime": "PT5M"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "EUR",
+        "lowPrice": "5.95",
+        "highPrice": "87.00",
+        "offerCount": "7"
+      }
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/shared-base.css"/>
+    <link rel="stylesheet" href="css/booking.css"/>
+</head>
+
+<body>
+    <!-- Skip Navigation Link für Barrierefreiheit -->
+    <a href="#main-content" class="sr-only">Zum Hauptinhalt springen</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="img/croppedlogoswoofle.png" alt="SWOOFLE Logo - Zurück zur Startseite" class="logo-light">
+                    <img src="img/logodarkmode.png" alt="SWOOFLE Logo - Zurück zur Startseite" class="logo-dark">
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="nav-menu" id="navMenu" role="navigation" aria-label="Hauptnavigation">
+                    <a href="index.html">Startseite</a>
+                    <a href="index.html#products">Produkte</a>
+                    <a href="booking.html" aria-current="page">InstantBooking</a>
+                    <a href="customersupport.html">Support</a>
+                    <a href="kontakt.html">Kontakt</a>
+                </nav>
+
+                <!-- Header Controls -->
+                <div class="header-controls">
+                    <button class="theme-toggle" data-action="toggle-theme" aria-label="Theme wechseln zwischen Hell und Dunkel">
+                        <span class="theme-icon" aria-hidden="true">🌙</span>
+                    </button>
+                    <button class="hamburger" data-action="toggle-menu" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" role="main">
+        <div class="booking-page">
+            <div class="container">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1>SWOOFLE RENT</h1>
+                    <p>Buche deine Eventmöbel in einfachen Schritten</p>
+                </div>
+
+                <!-- Dynamic Stepper mit verbesserter Accessibility -->
+                <div class="stepper" id="bookingStepper" role="navigation" aria-label="Buchungsfortschritt">
+                    <!-- Flow A: Von index.html (2 Schritte) -->
+                    <div class="stepper-variant flow-a" id="stepperFlowA" role="group" aria-label="2-Schritte Buchungsprozess">
+                        <div class="glass-step active" data-step="1" role="tab" aria-selected="true" aria-current="step">
+                            <span class="step-number" aria-hidden="true">1</span>
+                            <span class="step-label">Auswahl</span>
+                        </div>
+                        <div class="glass-step" data-step="2" role="tab" aria-selected="false" aria-current="false">
+                            <span class="step-number" aria-hidden="true">2</span>
+                            <span class="step-label">Übersicht</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Flow B: Direkter Zugriff (3 Schritte) -->
+                    <div class="stepper-variant flow-b" id="stepperFlowB" role="group" aria-label="3-Schritte Buchungsprozess">
+                        <div class="glass-step active" data-step="1" role="tab" aria-selected="true" aria-current="step">
+                            <span class="step-number" aria-hidden="true">1</span>
+                            <span class="step-label">Verfügbarkeit</span>
+                        </div>
+                        <div class="glass-step" data-step="2" role="tab" aria-selected="false" aria-current="false">
+                            <span class="step-number" aria-hidden="true">2</span>
+                            <span class="step-label">Auswahl</span>
+                        </div>
+                        <div class="glass-step" data-step="3" role="tab" aria-selected="false" aria-current="false">
+                            <span class="step-number" aria-hidden="true">3</span>
+                            <span class="step-label">Übersicht</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Status Region für Screen Reader -->
+                <div role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+
+                <!-- Booking Content -->
+                <div class="booking-content" role="tabpanel">
+                    
+                    <!-- Flow B - Schritt 1: Verfügbarkeitsprüfung (nur bei direktem Zugriff) -->
+                    <section class="step-content" data-step="availability" data-flow="b" aria-labelledby="availability-heading">
+                        <div class="availability-section">
+                            <div class="section-card">
+                                <h2 id="availability-heading">Verfügbarkeit prüfen</h2>
+                                <p class="section-description">Gib deinen gewünschten Zeitraum an und wähle optional die passende Produktkategorien aus</p>
+                                
+                                <form class="availability-form" aria-label="Verfügbarkeitsprüfung Formular">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="directStartDate">Startdatum: <abbr title="Pflichtfeld" aria-label="Pflichtfeld">*</abbr></label>
+                                            <input type="date" id="directStartDate" class="date-input-large" required aria-required="true" aria-describedby="date-format-help">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="directEndDate">Enddatum: <abbr title="Pflichtfeld" aria-label="Pflichtfeld">*</abbr></label>
+                                            <input type="date" id="directEndDate" class="date-input-large" required aria-required="true" aria-describedby="date-format-help">
+                                        </div>
+                                    </div>
+                                    <span id="date-format-help" class="help-text">Format: TT.MM.JJJJ</span>
+                                    
+                                    <div class="form-group">
+                                        <fieldset>
+                                            <legend>Gewünschte Produktkategorien (optional):</legend>
+                                            <div class="category-selection-grid" role="group">
+                                                <label class="category-card-selection">
+                                                    <input type="checkbox" value="flatcubes" name="categories" aria-describedby="flatcubes-desc">
+                                                    <div class="category-content">
+                                                        <div class="category-icon">🪑</div>
+                                                        <span class="category-name">FlatCubes</span>
+                                                        <span class="category-price">ab 87€/Set</span>
+                                                    </div>
+                                                </label>
+                                                <span id="flatcubes-desc" class="sr-only">Modulare Sitzwürfel ab 87€/Set/Tag</span>
+                                                
+                                                <label class="category-card-selection">
+                                                    <input type="checkbox" value="desks" name="categories" aria-describedby="desks-desc">
+                                                    <div class="category-content">
+                                                        <div class="category-icon">🗃️</div>
+                                                        <span class="category-name">Desks & Tables</span>
+                                                        <span class="category-price">ab 7,54€/Tag</span>
+                                                    </div>
+                                                </label>
+                                                <span id="desks-desc" class="sr-only">Tische und Schreibtische ab 7,54€/Tag</span>
+                                                
+                                                <label class="category-card-selection">
+                                                    <input type="checkbox" value="accessories" name="categories" aria-describedby="accessories-desc">
+                                                    <div class="category-content">
+                                                        <div class="category-icon">🪴</div>
+                                                        <span class="category-name">Zubehör</span>
+                                                        <span class="category-price">ab 5,95€/Tag</span>
+                                                    </div>
+                                                </label>
+                                                <span id="accessories-desc" class="sr-only">FlowerPots und weiteres Zubehör ab 5,95€/Tag</span>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="directReservationCode">Falls du bereits einen Reservierungscode hast:</label>
+                                        <input type="text" id="directReservationCode" placeholder="SWF-ABC123" maxlength="12" aria-describedby="code-format-help">
+                                        <p id="code-format-help" class="help-text">Reservierungscode eingeben (Format: SWF-XXXXXX)</p>
+                                    </div>
+                                    
+                                    <button type="button" class="btn btn-primary btn-glass btn-block" id="checkDirectAvailability" disabled aria-busy="false">
+                                        Verfügbarkeit prüfen
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Schritt 1/2: Produktauswahl -->
+                    <section class="step-content" data-step="selection" aria-labelledby="selection-heading">
+                        <h2 id="selection-heading" class="sr-only">Produktauswahl</h2>
+                        
+                        <div class="step1-two-column-layout">
+                            <!-- Linke Spalte: Datum, Reservierungscode UND Akkordeons -->
+                            <div class="left-column">
+                                <!-- Datum Info (bei Flow A) oder Änderung (bei Flow B) -->
+                                <div class="section-card">
+                                    <h3>Dein Mietzeitraum</h3>
+                                    
+                                    <div class="selected-dates-display" id="selectedDatesDisplay" role="region" aria-label="Ausgewählter Mietzeitraum">
+                                        <div class="date-info">
+                                            <span class="date-label">Von:</span>
+                                            <span class="date-value" id="displayStartDate" aria-live="polite">--</span>
+                                        </div>
+                                        <div class="date-info">
+                                            <span class="date-label">Bis:</span>
+                                            <span class="date-value" id="displayEndDate" aria-live="polite">--</span>
+                                        </div>
+                                        <div class="date-info">
+                                            <span class="date-label">Dauer:</span>
+                                            <span class="date-value" id="displayDuration" aria-live="polite">-- Tage</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Flow B: Datum ändern möglich -->
+                                    <div class="date-change-section" id="dateChangeSection" style="display: none;">
+                                        <button class="btn btn-outline btn-sm" id="changeDatesBtn" aria-expanded="false" aria-controls="dateChangeForm">
+                                            Datum ändern
+                                        </button>
+                                        
+                                        <div class="date-change-form" id="dateChangeForm" style="display: none;" role="region" aria-label="Datum ändern">
+                                            <div class="date-inputs">
+                                                <div class="date-input">
+                                                    <label for="newStartDate">Neues Startdatum:</label>
+                                                    <input type="date" id="newStartDate" class="date-input-large" aria-describedby="new-date-help">
+                                                </div>
+                                                <div class="date-input">
+                                                    <label for="newEndDate">Neues Enddatum:</label>
+                                                    <input type="date" id="newEndDate" class="date-input-large" aria-describedby="new-date-help">
+                                                </div>
+                                            </div>
+                                            <span id="new-date-help" class="sr-only">Wähle neue Daten für deinen Mietzeitraum</span>
+                                            <div class="date-change-actions">
+                                                <button class="btn btn-primary btn-sm" id="updateDatesBtn">Aktualisieren</button>
+                                                <button class="btn btn-outline btn-sm" id="cancelDateChangeBtn">Abbrechen</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="reservation-code-input" id="reservationCodeSection">
+                                        <label for="reservationCode">Reservierungscode (optional):</label>
+                                        <input id="reservationCode" placeholder="z.B. SWF-ABC123" type="text" aria-describedby="reservation-help"/>
+                                        <p id="reservation-help" class="help-text">Nicht sicher beim Datum? <a class="contact-link" href="kontakt.html">Kontaktiere uns</a></p>
+                                    </div>
+                                </div>
+
+                                <!-- Produktauswahl Akkordeon -->
+                                <div class="accordion-section" id="productAccordions" role="region" aria-label="Produkt- und Versandoptionen">
+                                    
+                                    <!-- FlatCubes Akkordeon -->
+                                    <div class="accordion-item" data-category="flatcubes">
+                                        <div class="accordion-header" data-action="toggle-accordion" role="button" aria-expanded="false" aria-controls="flatcubes-content">
+                                            <div class="accordion-title-group">
+                                                <span class="accordion-icon icon-flatcubes"></span> 
+                                                <h3>FlatCubes</h3>
+                                            </div>
+                                            <div class="accordion-controls">
+                                                <button class="info-button" data-action="show-info" data-info="flatcubes" aria-label="Mehr Informationen über FlatCubes">
+                                                    <span aria-hidden="true">i</span>
+                                                </button>
+                                                <span class="accordion-toggle-icon" aria-hidden="true">▼</span>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-content" id="flatcubes-content" role="region" aria-labelledby="flatcubes-heading">
+                                            <h4 id="flatcubes-heading" class="sr-only">FlatCube Produkte</h4>
+                                            <div class="product-grid-simple">
+                                                <!-- FlatCube Premium Black -->
+                                                <div class="product-item-simple">
+                                                    <div class="product-info">
+                                                        <div class="product-image-placeholder" role="img" aria-label="FlatCube Premium Black">FC</div>
+                                                        <div class="product-details">
+                                                            <div class="product-name">FlatCube Premium Black</div>
+                                                            <div class="product-price">87€/Set/Tag</div>
+                                                            <div class="product-availability" aria-live="polite">10 Sets verfügbar</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-quantity" role="group" aria-label="Menge für FlatCube Premium Black">
+                                                        <button class="quantity-btn" data-action="update-quantity" data-product="Flatcube Premium Black" data-delta="-1" aria-label="Menge verringern">−</button>
+                                                        <input class="quantity-input" min="0" max="10" type="number" value="0" data-product="Flatcube Premium Black" aria-label="Anzahl FlatCube Premium Black Sets"/>
+                                                        <button class="quantity-btn add" data-action="update-quantity" data-product="Flatcube Premium Black" data-delta="1" aria-label="Menge erhöhen">+</button>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- FlatCube Premium White -->
+                                                <div class="product-item-simple">
+                                                    <div class="product-info">
+                                                        <div class="product-image-placeholder" role="img" aria-label="FlatCube Premium White">FC</div>
+                                                        <div class="product-details">
+                                                            <div class="product-name">FlatCube Premium White</div>
+                                                            <div class="product-price">87€/Set/Tag</div>
+                                                            <div class="product-availability" aria-live="polite">8 Sets verfügbar</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-quantity" role="group" aria-label="Menge für FlatCube Premium White">
+                                                        <button class="quantity-btn" data-action="update-quantity" data-product="Flatcube Premium White" data-delta="-1" aria-label="Menge verringern">−</button>
+                                                        <input class="quantity-input" min="0" max="8" type="number" value="0" data-product="Flatcube Premium White" aria-label="Anzahl FlatCube Premium White Sets"/>
+                                                        <button class="quantity-btn add" data-action="update-quantity" data-product="Flatcube Premium White" data-delta="1" aria-label="Menge erhöhen">+</button>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- FlatCube Premium Orange (Nicht verfügbar) -->
+                                                <div class="product-item-simple disabled" aria-disabled="true">
+                                                    <div class="product-info">
+                                                        <div class="product-image-placeholder" role="img" aria-label="FlatCube Premium Orange - Nicht verfügbar">FC</div>
+                                                        <div class="product-details">
+                                                            <div class="product-name">FlatCube Premium Orange</div>
+                                                            <div class="product-price">87€/Set/Tag</div>
+                                                            <div class="product-availability out-of-stock" role="status">Nicht verfügbar</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-quantity">
+                                                        <button class="quantity-btn" disabled aria-label="Nicht verfügbar">−</button>
+                                                        <input class="quantity-input" min="0" type="number" value="0" disabled aria-label="Nicht verfügbar"/>
+                                                        <button class="quantity-btn" disabled aria-label="Nicht verfügbar">+</button>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- FlatCube Premium Berry -->
+                                                <div class="product-item-simple">
+                                                    <div class="product-info">
+                                                        <div class="product-image-placeholder" role="img" aria-label="FlatCube Premium Berry">FC</div>
+                                                        <div class="product-details">
+                                                            <div class="product-name">FlatCube Premium Berry</div>
+                                                            <div class="product-price">87€/Set/Tag</div>
+                                                            <div class="product-availability" aria-live="polite">3 Sets verfügbar</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-quantity" role="group" aria-label="Menge für FlatCube Premium Berry">
+                                                        <button class="quantity-btn" data-action="update-quantity" data-product="Flatcube Premium Berry" data-delta="-1" aria-label="Menge verringern">−</button>
+                                                        <input class="quantity-input" min="0" max="3" type="number" value="0" data-product="Flatcube Premium Berry" aria-label="Anzahl FlatCube Premium Berry Sets"/>
+                                                        <button class="quantity-btn add" data-action="update-quantity" data-product="Flatcube Premium Berry" data-delta="1" aria-label="Menge erhöhen">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Desks & Tables Akkordeon -->
+                                    <div class="accordion-item" data-category="desks">
+                                        <div class="accordion-header" data-action="toggle-accordion" role="button" aria-expanded="false" aria-controls="desks-content">
+                                            <div class="accordion-title-group">
+                                                <div class="accordion-icon">🗃️</div>
+                                                <h3>Desks & Tables</h3>
+                                            </div>
+                                            <div class="accordion-controls">
+                                                <button class="info-button" data-action="show-info" data-info="desks" aria-label="Mehr Informationen über Desks & Tables">
+                                                    <span aria-hidden="true">i</span>
+                                                </button>
+                                                <span class="accordion-toggle-icon" aria-hidden="true">▼</span>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-content" id="desks-content" role="region" aria-labelledby="desks-heading">
+                                            <h4 id="desks-heading" class="sr-only">Desks & Tables Produkte</h4>
+                                            <div class="product-grid-simple">
+                                                <!-- FlatDesk -->
+                                                <div class="product-item-simple">
+                                                    <div class="product-info">
+                                                        <div class="product-image-placeholder" role="img" aria-label="FlatDesk">FD</div>
+                                                        <div class="product-details">
+                                                            <div class="product-name">FlatDesk</div>
+                                                            <div class="product-price">7,54€/Tag</div>
+                                                            <div class="product-availability" aria-live="polite">30 verfügbar</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-quantity" role="group" aria-label="Menge für FlatDesk">
+                                                        <button class="quantity-btn" data-action="update-quantity" data-product="FlatDesk" data-delta="-1" aria-label="Menge verringern">−</button>
+                                                        <input class="quantity-input" min="0" max="30" type="number" value="0" data-product="FlatDesk" aria-label="Anzahl FlatDesk"/>
+                                                        <button class="quantity-btn add" data-action="update-quantity" data-product="FlatDesk" data-delta="1" aria-label="Menge erhöhen">+</button>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- ThinkTable -->
+                                                <div class="product-item-simple">
+                                                    <div class="product-info">
+                                                        <div class="product-image-placeholder" role="img" aria-label="ThinkTable">TT</div>
+                                                        <div class="product-details">
+                                                            <div class="product-name">ThinkTable</div>
+                                                            <div class="product-price">13,92€/Tag</div>
+                                                            <div class="product-availability" aria-live="polite">25 verfügbar</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-quantity" role="group" aria-label="Menge für ThinkTable">
+                                                        <button class="quantity-btn" data-action="update-quantity" data-product="ThinkTable" data-delta="-1" aria-label="Menge verringern">−</button>
+                                                        <input class="quantity-input" min="0" max="25" type="number" value="0" data-product="ThinkTable" aria-label="Anzahl ThinkTable"/>
+                                                        <button class="quantity-btn add" data-action="update-quantity" data-product="ThinkTable" data-delta="1" aria-label="Menge erhöhen">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Zubehör Akkordeon -->
+                                    <div class="accordion-item" data-category="accessories">
+                                        <div class="accordion-header" data-action="toggle-accordion" role="button" aria-expanded="false" aria-controls="accessories-content">
+                                            <div class="accordion-title-group">
+                                                <div class="accordion-icon">🪴</div>
+                                                <h3>Zubehör</h3>
+                                            </div>
+                                            <div class="accordion-controls">
+                                                <button class="info-button" data-action="show-info" data-info="accessories" aria-label="Mehr Informationen über Zubehör">
+                                                    <span aria-hidden="true">i</span>
+                                                </button>
+                                                <span class="accordion-toggle-icon" aria-hidden="true">▼</span>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-content" id="accessories-content" role="region" aria-labelledby="accessories-heading">
+                                            <h4 id="accessories-heading" class="sr-only">Zubehör Produkte</h4>
+                                            <div class="product-grid-simple">
+                                                <!-- FlowerPot -->
+                                                <div class="product-item-simple">
+                                                    <div class="product-info">
+                                                        <div class="product-image-placeholder" role="img" aria-label="FlowerPot">FP</div>
+                                                        <div class="product-details">
+                                                            <div class="product-name">FlowerPot</div>
+                                                            <div class="product-price">5,95€/Tag</div>
+                                                            <div class="product-availability" aria-live="polite">50 verfügbar</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-quantity" role="group" aria-label="Menge für FlowerPot">
+                                                        <button class="quantity-btn" data-action="update-quantity" data-product="FlowerPot" data-delta="-1" aria-label="Menge verringern">−</button>
+                                                        <input class="quantity-input" min="0" max="50" type="number" value="0" data-product="FlowerPot" aria-label="Anzahl FlowerPot"/>
+                                                        <button class="quantity-btn add" data-action="update-quantity" data-product="FlowerPot" data-delta="1" aria-label="Menge erhöhen">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Versandoptionen -->
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" data-action="toggle-accordion" role="button" aria-expanded="false" aria-controls="shipping-content">
+                                            <div class="accordion-title-group">
+                                                <div class="accordion-icon">🚚</div>
+                                                <h3>Versandoptionen</h3>
+                                            </div>
+                                            <div class="accordion-controls">
+                                                <button class="info-button" data-action="show-info" data-info="shipping" aria-label="Mehr Informationen über Versandoptionen">
+                                                    <span aria-hidden="true">i</span>
+                                                </button>
+                                                <span class="accordion-toggle-icon" aria-hidden="true">▼</span>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-content" id="shipping-content" role="region" aria-labelledby="shipping-heading">
+                                            <fieldset class="shipping-options" role="radiogroup" aria-labelledby="shipping-heading">
+                                                <legend id="shipping-heading" class="sr-only">Versandoptionen auswählen</legend>
+                                                
+                                                <label class="shipping-option">
+                                                    <input type="radio" name="shipping" value="standard-de" data-price="11.95" checked aria-describedby="standard-de-desc">
+                                                    <div class="shipping-info">
+                                                        <div class="shipping-name">Standardversand Deutschland</div>
+                                                        <div class="shipping-description" id="standard-de-desc">Lieferung bis 12 Uhr</div>
+                                                    </div>
+                                                    <div class="shipping-price" aria-label="Preis">11,95€</div>
+                                                </label>
+                                                
+                                                <label class="shipping-option">
+                                                    <input type="radio" name="shipping" value="express-10" data-price="24.95" aria-describedby="express-10-desc">
+                                                    <div class="shipping-info">
+                                                        <div class="shipping-name">Express bis 10 Uhr</div>
+                                                        <div class="shipping-description" id="express-10-desc">Garantierte Lieferung bis 10 Uhr</div>
+                                                    </div>
+                                                    <div class="shipping-price" aria-label="Preis">24,95€</div>
+                                                </label>
+                                                
+                                                <label class="shipping-option">
+                                                    <input type="radio" name="shipping" value="express-9" data-price="29.95" aria-describedby="express-9-desc">
+                                                    <div class="shipping-info">
+                                                        <div class="shipping-name">Express bis 9 Uhr</div>
+                                                        <div class="shipping-description" id="express-9-desc">Garantierte Lieferung bis 9 Uhr</div>
+                                                    </div>
+                                                    <div class="shipping-price" aria-label="Preis">29,95€</div>
+                                                </label>
+                                                
+                                                <label class="shipping-option">
+                                                    <input type="radio" name="shipping" value="express-8" data-price="49.95" aria-describedby="express-8-desc">
+                                                    <div class="shipping-info">
+                                                        <div class="shipping-name">Express bis 8 Uhr</div>
+                                                        <div class="shipping-description" id="express-8-desc">Garantierte Lieferung bis 8 Uhr</div>
+                                                    </div>
+                                                    <div class="shipping-price" aria-label="Preis">49,95€</div>
+                                                </label>
+                                                
+                                                <label class="shipping-option">
+                                                    <input type="radio" name="shipping" value="standard-eu" data-price="39.95" aria-describedby="standard-eu-desc">
+                                                    <div class="shipping-info">
+                                                        <div class="shipping-name">Standardversand Europa</div>
+                                                        <div class="shipping-description" id="standard-eu-desc">Lieferung bis 12 Uhr (Europa)</div>
+                                                    </div>
+                                                    <div class="shipping-price" aria-label="Preis">39,95€</div>
+                                                </label>
+                                                
+                                                <label class="shipping-option">
+                                                    <input type="radio" name="shipping" value="overnight-eu" data-price="79.95" aria-describedby="overnight-eu-desc">
+                                                    <div class="shipping-info">
+                                                        <div class="shipping-name">Overnight Europa</div>
+                                                        <div class="shipping-description" id="overnight-eu-desc">Overnight-Versand bis 12 Uhr</div>
+                                                    </div>
+                                                    <div class="shipping-price" aria-label="Preis">79,95€</div>
+                                                </label>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+
+                                    <!-- Schutzpaket -->
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" data-action="toggle-accordion" role="button" aria-expanded="false" aria-controls="insurance-content">
+                                            <div class="accordion-title-group">
+                                                <div class="accordion-icon">🛡️</div>
+                                                <h3>Schutzpaket (optional)</h3>
+                                            </div>
+                                            <div class="accordion-controls">
+                                                <button class="info-button" data-action="show-info" data-info="insurance" aria-label="Mehr Informationen über das Schutzpaket">
+                                                    <span aria-hidden="true">i</span>
+                                                </button>
+                                                <span class="accordion-toggle-icon" aria-hidden="true">▼</span>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-content" id="insurance-content" role="region" aria-labelledby="insurance-heading">
+                                            <p class="insurance-description">Reduziert Selbstbeteiligung auf 30% bei Beschädigung, 70% bei Verlust/Diebstahl</p>
+                                            <fieldset class="insurance-options" role="group" aria-labelledby="insurance-heading">
+                                                <legend id="insurance-heading" class="sr-only">Schutzpaket Optionen</legend>
+                                                
+                                                <label class="insurance-option">
+                                                    <input type="checkbox" data-insurance="cube" data-price="5.80" aria-describedby="cube-insurance-desc">
+                                                    <span class="insurance-name">Cube Schutzpaket</span>
+                                                    <span class="insurance-price" aria-label="Preis pro Tag">+5,80€/Tag</span>
+                                                </label>
+                                                <span id="cube-insurance-desc" class="sr-only">Schutzpaket für FlatCubes</span>
+                                                
+                                                <label class="insurance-option">
+                                                    <input type="checkbox" data-insurance="desk" data-price="1.16" aria-describedby="desk-insurance-desc">
+                                                    <span class="insurance-name">FlatDesk Schutzpaket</span>
+                                                    <span class="insurance-price" aria-label="Preis pro Tag">+1,16€/Tag</span>
+                                                </label>
+                                                <span id="desk-insurance-desc" class="sr-only">Schutzpaket für FlatDesks</span>
+                                                
+                                                <label class="insurance-option">
+                                                    <input type="checkbox" data-insurance="pot" data-price="1.16" aria-describedby="pot-insurance-desc">
+                                                    <span class="insurance-name">FlowerPot Schutzpaket</span>
+                                                    <span class="insurance-price" aria-label="Preis pro Tag">+1,16€/Tag</span>
+                                                </label>
+                                                <span id="pot-insurance-desc" class="sr-only">Schutzpaket für FlowerPots</span>
+                                                
+                                                <label class="insurance-option">
+                                                    <input type="checkbox" data-insurance="table" data-price="13.92" aria-describedby="table-insurance-desc">
+                                                    <span class="insurance-name">ThinkTable Schutzpaket</span>
+                                                    <span class="insurance-price" aria-label="Preis pro Tag">+13,92€/Tag</span>
+                                                </label>
+                                                <span id="table-insurance-desc" class="sr-only">Schutzpaket für ThinkTables</span>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Rechte Spalte: Live Übersicht -->
+                            <div class="right-column">
+                                <aside class="live-summary" role="complementary" aria-labelledby="summary-title">
+                                    <h3 id="summary-title">Zusammenfassung deiner Auswahl</h3>
+                                    <div class="summary-content">
+                                        <div class="summary-item">
+                                            <span>Zeitraum:</span>
+                                            <span id="selectedDateRange" aria-live="polite">Bitte Datum wählen</span>
+                                        </div>
+                                        <div class="summary-item">
+                                            <span>Ausgewählte Artikel:</span>
+                                            <span id="selectedItemsCount" aria-live="polite">0</span>
+                                        </div>
+                                        <div class="summary-item total">
+                                            <span>Geschätzte Gesamtsumme:</span>
+                                            <span id="estimatedTotal" aria-live="polite">0,00€</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="btn btn-primary btn-glass btn-block" data-action="next-step" id="proceedToSummary" disabled aria-busy="false">
+                                        Zur Übersicht
+                                    </button>
+                                </aside>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Schritt 2/3: Gesamtübersicht mit Reservierungscode -->
+                    <section class="step-content" data-step="summary" aria-labelledby="summary-main-heading">
+                        <h2 id="summary-main-heading" class="sr-only">Buchungsübersicht und Bestätigung</h2>
+                        
+                        <!-- Verbesserte Reservierungscode Anzeige -->
+                        <div class="reservation-display" style="display: none; opacity: 0;" id="reservationCodeDisplay" role="region" aria-label="Dein Reservierungscode">
+                            <h3>Dein Reservierungscode</h3>
+                            <div class="reservation-code-display" id="generatedReservationId" aria-live="polite" aria-atomic="true"></div>
+                            <p>Dieser Code ist 24 Stunden gültig. Bitte notiere ihn dir für deine Unterlagen.</p>
+                            <button class="copy-code-btn" id="copyReservationId" aria-label="Reservierungscode in Zwischenablage kopieren">
+                                📋 Code kopieren
+                            </button>
+                        </div>
+
+                        <div class="final-summary-layout">
+                            <div class="final-summary-card">
+                                <h2>Buchungsübersicht</h2>
+                                
+                                <div class="summary-sections">
+                                    <section class="summary-section" aria-labelledby="timeframe-title">
+                                        <h4 id="timeframe-title">Zeitraum</h4>
+                                        <div class="summary-details">
+                                            <p><strong>Start:</strong> <span id="finalStartDate">--</span></p>
+                                            <p><strong>Ende:</strong> <span id="finalEndDate">--</span></p>
+                                            <p><strong>Dauer:</strong> <span id="finalDuration">-- Tage</span></p>
+                                        </div>
+                                    </section>
+                                    
+                                    <section class="summary-section" aria-labelledby="products-title-final">
+                                        <h4 id="products-title-final">Produkte</h4>
+                                        <div class="summary-details">
+                                            <ul id="finalProductList" role="list">
+                                                <li>Keine Produkte ausgewählt</li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                    
+                                    <section class="summary-section" aria-labelledby="delivery-title">
+                                        <h4 id="delivery-title">Lieferung</h4>
+                                        <div class="summary-details">
+                                            <p><strong>Option:</strong> <span id="finalShippingOption">Standardversand Deutschland</span></p>
+                                            <p><strong>Kosten:</strong> <span id="finalShippingCost">11,95€</span></p>
+                                        </div>
+                                    </section>
+                                    
+                                    <section class="summary-section" aria-labelledby="protection-title">
+                                        <h4 id="protection-title">Schutzpaket</h4>
+                                        <div class="summary-details">
+                                            <p id="finalInsuranceDetails">Kein Schutzpaket ausgewählt</p>
+                                            <p><strong>Kosten:</strong> <span id="finalInsuranceCost">0,00€</span></p>
+                                        </div>
+                                    </section>
+                                    
+                                    <section class="summary-section cost-breakdown" aria-labelledby="costs-title">
+                                        <h4 id="costs-title">Kostenaufstellung</h4>
+                                        <div class="cost-details">
+                                            <div class="cost-item">
+                                                <span>Produkte:</span>
+                                                <span id="finalProductCost" aria-label="Produktkosten">0,00€</span>
+                                            </div>
+                                            <div class="cost-item">
+                                                <span>Versand:</span>
+                                                <span id="finalShippingCost2" aria-label="Versandkosten">11,95€</span>
+                                            </div>
+                                            <div class="cost-item">
+                                                <span>Schutzpaket:</span>
+                                                <span id="finalInsuranceCost2" aria-label="Schutzpaket Kosten">0,00€</span>
+                                            </div>
+                                            <div class="cost-item">
+                                                <span>Zwischensumme:</span>
+                                                <span id="finalSubtotal" aria-label="Zwischensumme">11,95€</span>
+                                            </div>
+                                            <div class="cost-item">
+                                                <span>MwSt. (19%):</span>
+                                                <span id="finalVat" aria-label="Mehrwertsteuer">2,27€</span>
+                                            </div>
+                                            <div class="cost-item total" role="status" aria-live="polite">
+                                                <span>Gesamtsumme:</span>
+                                                <span id="finalTotal" aria-label="Gesamtsumme inklusive Mehrwertsteuer">14,22€</span>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+
+                                <div class="final-actions" role="group" aria-label="Buchungsaktionen">
+                                    <button class="btn btn-primary btn-glass btn-large" data-action="complete-purchase" aria-busy="false">
+                                        Jetzt kaufen
+                                    </button>
+                                    <button class="btn btn-outline btn-large" data-action="generate-offer" aria-busy="false">
+                                        Angebot drucken
+                                    </button>
+                                    <button class="btn btn-outline" data-action="prev-step">
+                                        Zurück zur Auswahl
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Info Popups -->
+    <div class="info-popup" id="infoPopup" style="display: none;" role="dialog" aria-labelledby="infoTitle" aria-modal="true" aria-hidden="true">
+        <div class="info-popup-content">
+            <div class="info-popup-header">
+                <h4 id="infoTitle">Information</h4>
+                <button class="close-info" data-action="close-info" aria-label="Information schließen">×</button>
+            </div>
+            <div class="info-popup-body" id="infoContent" role="document">
+                <!-- Inhalt wird dynamisch geladen -->
+            </div>
+            <div class="info-popup-footer">
+                <a href="customersupport.html" class="help-link">Mehr Informationen findest du im Supportbereich</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SWOOFLE</h4>
+                    <a href="index.html#about">Über uns</a>
+                    <a href="#">Karriere</a>
+                    <a href="#">Presse</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Service</h4>
+                    <a href="kontakt.html">Kontakt</a>
+                    <a href="index.html#faq">FAQ</a>
+                    <a href="customersupport.html">Support</a>
+                    <a href="#">2ndChance Shop</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="#">Impressum</a>
+                    <a href="#">Datenschutz</a>
+                    <a href="#">AGB</a>
+                    <a href="#">Cookie-Einstellungen</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Folge uns</h4>
+                    <a href="#" aria-label="SWOOFLE auf Instagram">Instagram</a>
+                    <a href="#" aria-label="SWOOFLE auf Facebook">Facebook</a>
+                    <a href="#" aria-label="SWOOFLE auf LinkedIn">LinkedIn</a>
+                    <a href="#" aria-label="SWOOFLE auf YouTube">YouTube</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SWOOFLE GmbH. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Screen Reader Only Styles -->
+    <style>
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script src="js/booking.js"></script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - SWOOFLE GmbH | Ihr Partner für Eventmöbel in Berlin</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Kontaktieren Sie SWOOFLE GmbH in Berlin. Telefon: +49 (0)30 398 213 13 -0, E-Mail: info@swoofle.net. Öffnungszeiten Mo-Fr 10-18 Uhr. Rückrufservice verfügbar.">
+    <meta name="keywords" content="SWOOFLE, Kontakt, Berlin, Rhinstraße, Rückrufservice, Beratung, Support">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="SWOOFLE GmbH">
+    
+    <!-- Geo Meta Tags -->
+    <meta name="geo.region" content="DE-BE">
+    <meta name="geo.placename" content="Berlin">
+    <meta name="geo.position" content="52.4564;13.5269">
+    <meta name="ICBM" content="52.4564, 13.5269">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kontakt - SWOOFLE GmbH">
+    <meta property="og:description" content="Kontaktieren Sie uns in Berlin. Professionelle Beratung und Service von Mo-Fr 10-18 Uhr.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+    
+    <!-- Structured Data for Local Business -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "SWOOFLE GmbH",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rhinstraße 72",
+            "postalCode": "12681",
+            "addressLocality": "Berlin",
+            "addressCountry": "DE"
+        },
+        "telephone": "+49 30 398 213 13 0",
+        "faxNumber": "+49 30 398 213 13 1",
+        "email": "info@swoofle.net",
+        "openingHours": "Mo-Fr 10:00-18:00",
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "52.4564",
+            "longitude": "13.5269"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+49 30 398 213 13 0",
+            "contactType": "customer service"
+        }
+    }
+    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/shared-base.css">
+    <link rel="stylesheet" href="/css/kontakt.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="img/croppedlogoswoofle.png" alt="SWOOFLE GmbH" class="logo-light">
+                    <img src="img/logodarkmode.png" alt="SWOOFLE GmbH" class="logo-dark">
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="nav-menu" id="navMenu">
+                    <a href="index.html">Startseite</a>
+                    <a href="index.html#products">Produkte</a>
+                    <a href="booking.html">InstantBooking</a>
+                    <a href="customersupport.html">Support</a>
+                    <a href="kontakt.html" aria-current="page">Kontakt</a>
+                </nav>
+                
+                <!-- Header Controls -->
+                <div class="header-controls">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Theme umschalten">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    
+                    <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Kontaktiere uns!</h1>
+                    <p>Fülle das Formular aus und wir werden uns zeitnah melden.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Contact Form -->
+                    <div class="contact-form-wrapper">
+                        <h2 class="section-title">Nachricht senden</h2>
+                        
+                        <div id="contactStatus" class="status-message"></div>
+                        
+                        <form id="contactForm" action="#" method="post">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Ihr Name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">E-Mail</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="Ihre E-Mail-Adresse" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Betreff</label>
+                                <input type="text" id="subject" name="subject" class="form-input" placeholder="Betreff Ihrer Anfrage" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Nachricht</label>
+                                <textarea id="message" name="message" class="form-textarea" placeholder="Ihre Nachricht" required></textarea>
+                            </div>
+
+                            <!-- Rückrufservice Checkbox -->
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="callbackService" name="callback_service" class="checkbox-input">
+                                <label for="callbackService" class="checkbox-label">Ich möchte einen Rückrufservice in Anspruch nehmen.</label>
+                            </div>
+                            
+                            <!-- CAPTCHA -->
+                            <div class="captcha-container">
+                                <span class="captcha-question">Sicherheitsfrage: Was ist <span id="captchaNum1">7</span> + <span id="captchaNum2">3</span>?</span>
+                                <input type="number" id="captchaAnswer" name="captcha" class="captcha-input form-input" required aria-label="CAPTCHA Antwort">
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-submit">Senden</button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <h2 class="section-title">Kontaktinformationen</h2>
+                        
+                        <div class="info-card">
+                            <h3>📍 Adresse</h3>
+                            <div class="info-item">
+                                <span><strong>SWOOFLE GmbH</strong><br>
+                                Rhinstraße 72<br>
+                                12681 Berlin, Deutschland</span>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>📞 Kontakt</h3>
+                            <div class="info-item">
+                                <span>Telefon: <a href="tel:+4930398213130">+49 (0)30 398 213 13 -0</a></span>
+                            </div>
+                            <div class="info-item">
+                                <span>Fax: +49 (0)30 398 213 13 -1</span>
+                            </div>
+                            <div class="info-item">
+                                <span>E-Mail: <a href="mailto:info@swoofle.net">info@swoofle.net</a></span>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>🕒 Öffnungszeiten</h3>
+                            <div class="info-item">
+                                <span><strong>Montag bis Freitag: 10:00 - 18:00 Uhr</strong></span>
+                            </div>
+                            <div class="info-item">
+                                <span>Wir bemühen uns, deine Anfrage innerhalb dieser Zeiten zu beantworten.</span>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>Du benötigst sofortige Hilfe oder hast Fragen?</h3>
+                            <div class="info-item">
+                                <span>Dann besuche unseren umfangreichen Hilfebereich mit FAQs, Anleitungen und sofortigen Lösungen für die häufigsten Fragen.</span>
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <a href="customersupport.html" class="btn btn-primary">Zum Supportbereich</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: var(--space-8);">Unser Standort</h2>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2429.5234567890123!2d13.524567890123456!3d52.45646789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRhinstra%C3%9Fe%2072%2C%2012681%20Berlin!5e0!3m2!1sde!2sde!4v1234567890123"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="SWOOFLE GmbH Standort - Rhinstraße 72, 12681 Berlin">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rückrufservice Pop-up -->
+    <div class="popup-overlay" id="callbackPopup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3 class="popup-title">Rückrufservice</h3>
+                <button class="popup-close" id="popupClose">&times;</button>
+            </div>
+            
+            <div id="callbackStatus" class="status-message"></div>
+            
+            <form id="callbackForm">
+                <div class="form-group">
+                    <label for="callbackPhone" class="form-label">Telefonnummer</label>
+                    <input type="tel" id="callbackPhone" name="callback_phone" class="form-input" placeholder="Ihre Telefonnummer" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="callbackTime" class="form-label">Gewünschte Rückrufzeit</label>
+                    <select id="callbackTime" name="callback_time" class="form-select" required>
+                        <option value="">Bitte wählen...</option>
+                        <option value="morning">Vormittags (10:00 - 12:00 Uhr)</option>
+                        <option value="afternoon">Mittags (13:00 - 15:00 Uhr)</option>
+                        <option value="evening">Spät (15:00 - 18:00 Uhr)</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-submit">Rückruf anfordern</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Unternehmen</h4>
+                      <a href="#about" data-action="close-menu">Über uns</a>
+                    <a href="careers.html">Karriere</a>
+                    <a href="news.html">News</a>
+                    <a href="kontakt.html">Kontakt</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                     <a href="kontakt.html">Kontakt</a>
+                    <a href="index.html#faq">FAQ</a>
+                    <a href="customersupport.html">Support</a>
+                    <a href="#">2ndChance Shop</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Rechtliches</h4>
+                    <a href="impressum.html">Impressum</a>
+                    <a href="datenschutz.html">Datenschutz</a>
+                    <a href="agb.html">AGB</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Folgen Sie uns</h4>
+                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                    <a href="#" aria-label="Twitter">Twitter</a>
+                    <a href="#" aria-label="XING">XING</a>
+                    <a href="#" aria-label="YouTube">YouTube</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 SWOOFLE GmbH. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/kontakt.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
